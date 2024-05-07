@@ -1,8 +1,17 @@
 #container {
     display: flex;
+    width: 95vw;
+    height: 95vh;
+}
+
+.divColumn {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .squareDiv {
-    border: solid;
+    flex-grow: 1;
+    border: solid 1px;
     border-color: black;
 }

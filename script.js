@@ -9,8 +9,6 @@ let gridSize = INITIAL_GRID_SIZE;
 const container = document.querySelector("#container");
 
 const drawGrid = () => {
-    const squareSideSize = Math.floor(MAX_HEIGHT / gridSize);
-
     for (let i = 0 ; i < gridSize ; i++) {
         const divColumn = document.createElement("div");
         divColumn.classList.add("divColumn");
@@ -20,8 +18,6 @@ const drawGrid = () => {
             const squareDiv = document.createElement("div");
             squareDiv.classList.add("squareDiv");
             squareDiv.setAttribute("id", `squareDiv${j}`);
-            squareDiv.style.width = `${squareSideSize}px`;
-            squareDiv.style.height = `${squareSideSize}px`;
             squareDiv.addEventListener("mouseover", () => {
                 squareDiv.style.backgroundColor = "black";
             })
