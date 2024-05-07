@@ -19,7 +19,8 @@ const drawGrid = () => {
             squareDiv.classList.add("squareDiv");
             squareDiv.setAttribute("id", `squareDiv${j}`);
             squareDiv.addEventListener("mouseover", () => {
-                squareDiv.style.backgroundColor = "black";
+                const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                squareDiv.style.backgroundColor = "#" + randomColor;
             })
             divColumn.appendChild(squareDiv);
         }
