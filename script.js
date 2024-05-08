@@ -16,11 +16,24 @@ const drawGrid = () => {
 
         for (let j = 0 ; j < gridSize ; j++) {
             const squareDiv = document.createElement("div");
+
             squareDiv.classList.add("squareDiv");
             squareDiv.setAttribute("id", `squareDiv${j}`);
+
             squareDiv.addEventListener("mouseover", () => {
                 const randomColor = Math.floor(Math.random()*16777215).toString(16);
                 squareDiv.style.backgroundColor = "#" + randomColor;
+
+                const brightness = squareDiv.style.filter;
+
+                if (!brightness) {
+                    squareDiv.style.filter = "brightness(100%)";
+                    return;
+                } 
+
+                const brightnessValue = brightness.match(/\d+/)[0];
+
+                squareDiv.style.filter = `brightness(${brightnessValue - 10}%)`;
             })
             divColumn.appendChild(squareDiv);
         }
